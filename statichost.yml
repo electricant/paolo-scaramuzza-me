@@ -1,0 +1,11 @@
+# The official Zola image (ghcr.io/getzola/zola) is built FROM scratch and has
+# no shell. Statichost runs the build as /bin/sh -c '<command>', so that image
+# cannot be used here. Alpine carries zola in its community repository.
+#
+# alpine:3.24 ships zola 0.22.1, which is the version this site was built and
+# verified against. Alpine stable branches do not bump feature versions within a
+# release, so the tag pins the Zola minor version. Moving to 3.25 will bring a
+# newer Zola and possibly a config change, so re-run the build before switching.
+image: alpine:3.24
+command: apk add --no-cache zola && zola build
+public: public

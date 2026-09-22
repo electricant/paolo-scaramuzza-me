@@ -1,0 +1,458 @@
+/* ---- Fonts ------------------------------------------------------------ */
+
+@font-face {
+	font-family: "Inter Variable";
+	src: url("/fonts/InterVariable.woff2") format("woff2");
+	font-weight: 100 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Inter Variable";
+	src: url("/fonts/InterVariable-Italic.woff2") format("woff2");
+	font-weight: 100 900;
+	font-style: italic;
+	font-display: swap;
+}
+
+/* ---- Tokens ------------------------------------------------------------ */
+
+:root {
+	--bg: #fbfbf9;
+	--bg-raised: #ffffff;
+	--fg: #12181f;
+	--fg-muted: #52606d;
+	--border: #e3e6e1;
+	--accent: #0f766e;
+	--accent-fg: #ffffff;
+	--code-bg: #f6f8fa;
+	--shadow: 0 1px 2px rgba(18, 24, 31, 0.06), 0 8px 24px rgba(18, 24, 31, 0.05);
+
+	--font-body: "Inter Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
+	--font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+
+	--measure: 40rem;
+	--wide: 72rem;
+	--gutter: 1.25rem;
+
+	--space-1: 0.5rem;
+	--space-2: 1rem;
+	--space-3: 1.75rem;
+	--space-4: 3rem;
+	--space-5: 5rem;
+
+	--radius: 0.5rem;
+	color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--bg: #0b1420;
+		--bg-raised: #111f2f;
+		--fg: #e7ecef;
+		--fg-muted: #9aabb8;
+		--border: #1f2f42;
+		--accent: #2dd4bf;
+		--accent-fg: #06231f;
+		--code-bg: #0d1b2a;
+		--shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
+	}
+}
+
+/* ---- Reset -------------------------------------------------------------- */
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+	margin: 0;
+	background: var(--bg);
+	color: var(--fg);
+	font-family: var(--font-body);
+	font-size: 1.0625rem;
+	line-height: 1.65;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a {
+	color: var(--accent);
+	text-decoration-thickness: from-font;
+	text-underline-offset: 0.15em;
+}
+a:hover { text-decoration-thickness: 2px; }
+
+h1, h2, h3 {
+	line-height: 1.2;
+	font-weight: 700;
+	letter-spacing: -0.01em;
+}
+
+h1 { font-size: clamp(1.9rem, 1.4rem + 2vw, 2.75rem); }
+h2 { font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem); }
+h3 { font-size: 1.15rem; }
+
+p { margin: 0 0 1.1em; }
+
+/* in-page anchor targets (e.g. #services, #background on the home page):
+   keep clear of the sticky header when jumped to directly */
+section[id],
+h2[id] {
+	scroll-margin-top: 5.5rem;
+}
+
+/* ---- Layout helpers ------------------------------------------------------ */
+
+.wrap {
+	max-width: var(--wide);
+	margin: 0 auto;
+	padding: 0 var(--gutter);
+}
+
+.prose {
+	max-width: var(--measure);
+	margin-inline: auto;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px; height: 1px;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	white-space: nowrap;
+}
+
+/* ---- Header / nav -------------------------------------------------------- */
+
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 10;
+	background: color-mix(in srgb, var(--bg) 88%, transparent);
+	backdrop-filter: saturate(140%) blur(8px);
+	border-bottom: 1px solid var(--border);
+}
+
+.site-header .wrap {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: var(--space-2);
+	height: 4rem;
+}
+
+.wordmark {
+	display: flex;
+	align-items: center;
+	gap: 0.55rem;
+	font-weight: 700;
+	font-size: 1.05rem;
+	color: var(--fg);
+	text-decoration: none;
+}
+
+.wordmark:hover { text-decoration: none; }
+
+.wordmark svg { width: 1.9rem; height: 1.9rem; flex-shrink: 0; }
+
+.site-nav ul {
+	display: flex;
+	gap: var(--space-3);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.site-nav a {
+	color: var(--fg-muted);
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 0.95rem;
+}
+
+.site-nav a:hover {
+	color: var(--accent);
+}
+
+/* ---- Hero / banner -------------------------------------------------------- */
+
+.hero {
+	position: relative;
+	display: flex;
+	align-items: center;
+	min-height: min(60vh, 26rem);
+	color: #f6f7f5;
+	overflow: hidden;
+}
+
+.hero img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	z-index: -2;
+}
+
+.hero::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(180deg, rgba(11, 20, 32, 0.78), rgba(11, 20, 32, 0.62));
+	z-index: -1;
+}
+
+.hero .wrap {
+	padding-block: var(--space-4);
+	min-width: 0;
+	max-width: 50rem;
+	margin-inline: auto;
+	text-align: center;
+}
+
+.hero h1 { margin: 0 0 0.5rem; color: #fff; }
+.hero p { font-size: 1.15rem; color: #dfe6e9; margin: 0; }
+
+/* ---- Services grid -------------------------------------------------------- */
+
+.section { padding-block: var(--space-5); }
+.section-head { margin-bottom: var(--space-3); }
+.section-head p { color: var(--fg-muted); max-width: 38rem; }
+
+.service-grid {
+	display: grid;
+	gap: var(--space-3);
+	grid-template-columns: 1fr;
+}
+
+/* 3x2, matching the original Bootstrap col-md-4 layout (992px breakpoint).
+   Fixed-width columns (not 1fr) keep cards the same compact size the
+   auto-fit grid used, instead of stretched to a third of the row each.
+   50rem is exactly 3 cards + 2 gaps; center both the heading and the
+   grid in that same column so they share left AND right edges. */
+#services .section-head,
+#services .service-grid {
+	max-width: 50rem;
+	margin-inline: auto;
+}
+
+@media (min-width: 62rem) {
+	.service-grid {
+		grid-template-columns: repeat(3, 15.5rem);
+	}
+}
+
+.service-card {
+	background: var(--bg-raised);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	padding: var(--space-3);
+	box-shadow: var(--shadow);
+}
+
+.service-card-img {
+	display: block;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1 / 1;
+	object-fit: cover;
+	border-radius: calc(var(--radius) * 0.6);
+	margin-bottom: var(--space-2);
+}
+
+.service-card h3 { margin: 0 0 0.4rem; }
+.service-card p { color: var(--fg-muted); margin: 0; font-size: 0.98rem; }
+
+/* ---- Background section --------------------------------------------------- */
+
+/* Same 50rem column as the hero and services above it, so the home page
+   reads as one consistent width top to bottom instead of each section
+   picking its own measure. Article/reading/now/404 pages keep the
+   narrower --measure on the plain .prose rule - long-form reading text
+   wants a shorter line length than this landing-page copy does. */
+.background-section .prose {
+	max-width: 50rem;
+}
+
+.background-section .prose :is(h2, h3):first-child { margin-top: 0; }
+
+/* ---- Article index / lists -------------------------------------------------- */
+
+.post-list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border-top: 1px solid var(--border);
+}
+
+.post-list li {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 0.75rem;
+	padding: var(--space-2) 0;
+	border-bottom: 1px solid var(--border);
+}
+
+.post-list a {
+	color: var(--fg);
+	text-decoration: none;
+	font-weight: 600;
+}
+.post-list a:hover { color: var(--accent); }
+
+.post-list time {
+	color: var(--fg-muted);
+	font-size: 0.9rem;
+	white-space: nowrap;
+	font-variant-numeric: tabular-nums;
+}
+
+/* ---- Article page ---------------------------------------------------------- */
+
+.article-head { margin-bottom: var(--space-3); }
+.article-head time {
+	display: block;
+	color: var(--fg-muted);
+	font-size: 0.9rem;
+	margin-bottom: 0.4rem;
+}
+.article-head h1 { margin: 0; }
+
+.prose :is(h2, h3) { margin-top: 1.8em; }
+.prose ul, .prose ol { padding-left: 1.4em; }
+.prose blockquote {
+	margin: 1.4em 0;
+	padding-left: 1em;
+	border-left: 3px solid var(--accent);
+	color: var(--fg-muted);
+}
+
+.prose img { border-radius: var(--radius); margin: 1.2em 0; }
+
+.prose table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: 1.4em 0;
+	font-size: 0.95rem;
+}
+.prose th, .prose td {
+	border: 1px solid var(--border);
+	padding: 0.5em 0.7em;
+	text-align: left;
+}
+
+.prose code {
+	font-family: var(--font-mono);
+	font-size: 0.9em;
+	background: var(--code-bg);
+	padding: 0.15em 0.4em;
+	border-radius: 0.3em;
+}
+
+.prose pre {
+	padding: 1em 1.1em;
+	border-radius: var(--radius);
+	overflow-x: auto;
+	font-size: 0.88rem;
+	border: 1px solid var(--border);
+}
+.prose pre code {
+	background: none;
+	padding: 0;
+	font-size: 1em;
+}
+
+/* Giallo syntax highlighting layout hooks, see Zola docs */
+.giallo-l {
+	display: inline-block;
+	min-height: 1lh;
+	width: 100%;
+}
+.giallo-ln {
+	display: inline-block;
+	user-select: none;
+	margin-right: 0.4em;
+	padding: 0.4em;
+	min-width: 3ch;
+	text-align: right;
+	opacity: 0.6;
+}
+
+/* ---- Reading list ------------------------------------------------------------ */
+
+.reading-toc {
+	background: var(--bg-raised);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	padding: var(--space-2) var(--space-3);
+	margin-bottom: var(--space-4);
+}
+.reading-toc ol { margin: 0.5em 0 0; padding-left: 1.4em; }
+.reading-toc > p:first-child { margin: 0; font-weight: 600; }
+
+.prose h2 { border-top: 1px solid var(--border); padding-top: var(--space-3); }
+.prose h2:first-of-type { border-top: none; padding-top: 0; }
+
+/* ---- 404 ---------------------------------------------------------------------- */
+
+.error-page .prose ul { columns: 2; gap: var(--space-3); list-style: none; padding: 0; }
+.error-page .prose li { margin-bottom: 0.5em; }
+
+/* ---- Footer -------------------------------------------------------------------- */
+
+.site-footer {
+	border-top: 1px solid var(--border);
+	margin-top: var(--space-5);
+	padding-block: var(--space-4);
+	color: var(--fg-muted);
+	font-size: 0.92rem;
+}
+
+.footer-grid {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	gap: var(--space-3);
+	align-items: start;
+}
+
+.footer-grid address { font-style: normal; }
+.footer-grid address strong { color: var(--fg); }
+.footer-grid a { color: var(--fg-muted); }
+.footer-grid a:hover { color: var(--accent); }
+
+.social-list {
+	display: flex;
+	gap: 0.75rem;
+	list-style: none;
+	margin: 0 0 var(--space-2);
+	padding: 0;
+	justify-content: flex-end;
+}
+.social-list img { width: 1.35rem; height: 1.35rem; opacity: 0.75; }
+.social-list a:hover img { opacity: 1; }
+
+.footer-meta { text-align: right; }
+.footer-meta p { margin: 0 0 0.4em; }
+
+.sa-badge { display: inline-block; }
+.sa-badge img { border: 0; }
+
+/* ---- Responsive ------------------------------------------------------------------ */
+
+@media (max-width: 640px) {
+	:root { --space-5: 3.25rem; --space-4: 2.25rem; }
+	.footer-grid { grid-template-columns: 1fr; }
+	.footer-meta, .social-list { text-align: left; justify-content: flex-start; }
+	.error-page .prose ul { columns: 1; }
+	.site-nav ul { gap: var(--space-2); }
+}
+
+@media (max-width: 420px) {
+	.site-header .wrap { height: 3.5rem; }
+	.wordmark span { display: none; }
+}

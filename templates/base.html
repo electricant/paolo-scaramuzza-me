@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="{{ config.default_language }}">
+<head>
+	<meta charset="utf-8">
+	<title>{% block title %}{{ config.title }}{% endblock title %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="theme-color" content="#101823">
+
+	{% block meta %}
+	<meta name="description" content="{{ config.description }}">
+	<meta property="og:title" content="{{ config.title }}">
+	<meta property="og:type" content="website">
+	<meta property="og:description" content="{{ config.description }}">
+	<meta property="og:image" content="{{ get_url(path='icon-512.png') | safe }}">
+	{% if current_url is defined %}<meta property="og:url" content="{{ current_url | safe }}">{% endif %}
+	{% endblock meta %}
+
+	{% if current_url is defined %}<link rel="canonical" href="{{ current_url | safe }}">{% endif %}
+
+	<link rel="icon" href="{{ get_url(path='favicon.ico') | safe }}" sizes="32x32">
+	<link rel="icon" type="image/svg+xml" href="{{ get_url(path='icon.svg') | safe }}">
+	<link rel="apple-touch-icon" href="{{ get_url(path='apple-touch-icon.png') | safe }}">
+	<link rel="manifest" href="{{ get_url(path='manifest.webmanifest') | safe }}">
+
+	<link rel="preload" href="{{ get_url(path='fonts/InterVariable.woff2') | safe }}" as="font" type="font/woff2" crossorigin>
+	<link rel="stylesheet" href="{{ get_url(path='css/style.css') | safe }}">
+	<link rel="alternate" type="application/atom+xml" href="{{ get_url(path='atom.xml') | safe }}" title="{{ config.title }}">
+</head>
+<body>
+	<header class="site-header">
+		<div class="wrap">
+			<a class="wordmark" href="{{ get_url(path='/') | safe }}">
+				{% include "partials/icon.html" %}
+				<span>{{ config.title }}</span>
+			</a>
+			<nav class="site-nav" aria-label="Primary">
+				<ul>
+					<li><a href="{{ get_url(path='articles/') | safe }}">Articles</a></li>
+					<li><a href="{{ get_url(path='now/') | safe }}">Now</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	{% block content %}{% endblock content %}
+
+	{% include "partials/footer.html" %}
+
+	<!-- 100% privacy-first analytics -->
+	<script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+</body>
+</html>

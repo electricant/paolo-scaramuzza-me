@@ -1,0 +1,31 @@
+base_url = "https://paolo.scaramuzza.me"
+title = "Paolo Scaramuzza"
+description = "Electronic engineering consultant: RF, EMC compliance, embedded firmware and hardware."
+default_language = "en"
+
+generate_feeds     = true
+feed_filenames     = ["atom.xml"]
+build_search_index = false
+compile_sass       = false
+
+[markdown.highlighting]
+light_theme = "github-light"
+dark_theme  = "github-dark"
+
+[extra]
+domain = "paolo.scaramuzza.me"
+email = "engineering@scaramuzza.me"
+# pec = "paolo.scaramuzza@ingpec.eu"    # uncomment when Paolo publishes it
+# vat = "IT01234567890"                 # uncomment when Paolo publishes it
+albo1 = "Ordine degli Ingegneri della provincia di Gorizia"
+albo2 = "N. 942 A"
+
+[[extra.social]]
+name = "LinkedIn"
+url  = "https://www.linkedin.com/in/paolo-scaramuzza-27875822b/"
+icon = "img/social/linkedin.svg"
+
+[[extra.social]]
+name = "GitHub"
+url  = "https://github.com/electricant"
+icon = "img/social/github.svg"

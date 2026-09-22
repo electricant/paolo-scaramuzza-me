@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Page not found — {{ config.title }}{% endblock title %}
+
+{% block content %}
+	<section class="section error-page">
+		<div class="wrap prose">
+			<h1>Page not found</h1>
+			<p>That page doesn't exist any more. Here are all the articles on this site:</p>
+
+			{% set articles = get_section(path="articles/_index.md") %}
+			<ul>
+				{% for p in articles.pages %}
+				<li><a href="{{ p.permalink | safe }}">{{ p.title }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	</section>
+{% endblock content %}

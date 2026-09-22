@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}{{ config.title }} — {{ section.extra.tagline }}{% endblock title %}
+
+{% block meta %}
+	<meta name="description" content="{{ section.extra.lead }}">
+	<meta property="og:title" content="{{ config.title }} — {{ section.extra.tagline }}">
+	<meta property="og:type" content="website">
+	<meta property="og:description" content="{{ section.extra.lead }}">
+	<meta property="og:image" content="{{ get_url(path=section.extra.banner) | safe }}">
+	<meta property="og:url" content="{{ current_url | safe }}">
+{% endblock meta %}
+
+{% block content %}
+	<section class="hero">
+		<img src="{{ get_url(path=section.extra.banner) }}" alt="">
+		<div class="wrap">
+			<h1>{{ section.extra.tagline }}</h1>
+			<p>{{ section.extra.lead }}</p>
+		</div>
+	</section>
+
+	<section id="services" class="section">
+		<div class="wrap">
+			<div class="section-head">
+				<h2>Services</h2>
+			</div>
+			<div class="service-grid">
+				{% for s in section.extra.services %}
+				<div class="service-card">
+					<img class="service-card-img" src="{{ get_url(path=s.image) }}" alt="" width="250" height="250" loading="lazy">
+					<h3>{{ s.title }}</h3>
+					<p>{{ s.body }}</p>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+
+	<section id="background" class="section background-section">
+		<div class="wrap">
+			<div class="prose">
+				{{ section.content | safe }}
+			</div>
+		</div>
+	</section>
+{% endblock content %}
