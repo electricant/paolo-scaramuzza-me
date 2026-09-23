@@ -186,7 +186,7 @@ section[id],
 	position: relative;
 	display: flex;
 	align-items: center;
-	min-height: min(60vh, 26rem);
+	min-height: 50vh;
 	color: #f6f7f5;
 	overflow: hidden;
 }
@@ -204,7 +204,6 @@ section[id],
 	content: "";
 	position: absolute;
 	inset: 0;
-	background: linear-gradient(180deg, rgba(11, 20, 32, 0.78), rgba(11, 20, 32, 0.62));
 	z-index: -1;
 }
 

@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% block lang %}{{ page.extra.lang | default(value=config.default_language) }}{% endblock lang %}
+
 {% block title %}{{ page.title }} — {{ config.title }}{% endblock title %}
 
 {% block meta %}

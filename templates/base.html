@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ config.default_language }}">
+<html lang="{% block lang %}{{ config.default_language }}{% endblock lang %}">
 <head>
 	<meta charset="utf-8">
 	<title>{% block title %}{{ config.title }}{% endblock title %}</title>
