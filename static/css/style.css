@@ -32,7 +32,7 @@
 	--font-body: "Inter Variable", system-ui, -apple-system, "Segoe UI", sans-serif;
 	--font-mono: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
 
-	--measure: 40rem;
+	--measure: 54rem;   /* ~90 chars/line of prose; wide enough for most code */
 	--wide: 72rem;
 	--gutter: 1.25rem;
 
