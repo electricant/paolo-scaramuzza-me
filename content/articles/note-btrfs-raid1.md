@@ -55,12 +55,15 @@ tips.
 ## References
 
 <div class="references">
+
 \[1\] [Using Btrfs with Multiple Devices][1]
-[1]: https://btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices
 
 \[2\] [Manpage/mkfs.btrfs][2]
-[2]: https://btrfs.wiki.kernel.org/index.php/Manpage/mkfs.btrfs#PROFILES
 
 \[3\] [New Drive Burn-In Rituals][3]
-[3]: https://perfectmediaserver.com/hardware/new-drive-burnin/
+
 </div>
+
+[1]: https://btrfs.wiki.kernel.org/index.php/Using_Btrfs_with_Multiple_Devices
+[2]: https://btrfs.wiki.kernel.org/index.php/Manpage/mkfs.btrfs#PROFILES
+[3]: https://perfectmediaserver.com/hardware/new-drive-burnin/

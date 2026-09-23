@@ -14,7 +14,7 @@
 				{% for s in config.extra.social %}
 				<li>
 					<a href="{{ s.url | safe }}" title="{{ s.name }}" rel="me">
-						<img src="{{ get_url(path=s.icon) }}" alt="{{ s.name }}" width="20" height="20" loading="lazy">
+						<img src="/{{ s.icon | safe }}" alt="{{ s.name }}" width="20" height="20" loading="lazy">
 					</a>
 				</li>
 				{% endfor %}

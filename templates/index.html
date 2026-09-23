@@ -7,13 +7,14 @@
 	<meta property="og:title" content="{{ config.title }} — {{ section.extra.tagline }}">
 	<meta property="og:type" content="website">
 	<meta property="og:description" content="{{ section.extra.lead }}">
-	<meta property="og:image" content="{{ get_url(path=section.extra.banner) | safe }}">
 	<meta property="og:url" content="{{ current_url | safe }}">
 {% endblock meta %}
 
+{% block og_image %}<meta property="og:image" content="{{ get_url(path=section.extra.banner) | safe }}">{% endblock og_image %}
+
 {% block content %}
 	<section class="hero">
-		<img src="{{ get_url(path=section.extra.banner) }}" alt="">
+		<img src="/{{ section.extra.banner | safe }}" alt="">
 		<div class="wrap">
 			<h1>{{ section.extra.tagline }}</h1>
 			<p>{{ section.extra.lead }}</p>
@@ -28,7 +29,7 @@
 			<div class="service-grid">
 				{% for s in section.extra.services %}
 				<div class="service-card">
-					<img class="service-card-img" src="{{ get_url(path=s.image) }}" alt="" width="250" height="250" loading="lazy">
+					<img class="service-card-img" src="/{{ s.image | safe }}" alt="" width="250" height="250" loading="lazy">
 					<h3>{{ s.title }}</h3>
 					<p>{{ s.body }}</p>
 				</div>
@@ -37,7 +38,7 @@
 		</div>
 	</section>
 
-	<section id="background" class="section background-section">
+	<section class="section background-section">
 		<div class="wrap">
 			<div class="prose">
 				{{ section.content | safe }}

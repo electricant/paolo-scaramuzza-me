@@ -1,5 +1,6 @@
 base_url = "https://paolo.scaramuzza.me"
 title = "Paolo Scaramuzza"
+author = "Paolo Scaramuzza"
 description = "Electronic engineering consultant: RF, EMC compliance, embedded firmware and hardware."
 default_language = "en"
 

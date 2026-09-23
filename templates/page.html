@@ -3,8 +3,10 @@
 {% block title %}{{ page.title }} — {{ config.title }}{% endblock title %}
 
 {% block meta %}
-	<meta name="description" content="{{ page.summary | default(value=page.content | striptags | truncate(length=160)) | safe }}">
+	{% set desc = page.summary | default(value=page.content) | striptags | truncate(length=160) %}
+	<meta name="description" content="{{ desc | safe }}">
 	<meta property="og:title" content="{{ page.title }}">
+	<meta property="og:description" content="{{ desc | safe }}">
 	<meta property="og:type" content="article">
 	<meta property="og:url" content="{{ current_url | safe }}">
 	{% if page.date %}<meta property="article:published_time" content="{{ page.date }}">{% endif %}

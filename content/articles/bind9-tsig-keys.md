@@ -101,21 +101,24 @@ usual with the option -k ddns.key.
 ## References
 
 <div class="references">
-\[1\] [DNS Dynamic Update](1)
-[1]: https://docstore.mik.ua/orelly/networking_2ndEd/dns/ch10_02.htm
 
-\[2\] [Doing secure dynamic DNS updates with BIND](2)
-[2]: https://blog.hqcodeshop.fi/archives/76-Doing-secure-dynamic-DNS-updates-with-BIND.html
+\[1\] [DNS Dynamic Update][1]
 
-\[3\] [Security Configurations - TSIG](3)
-[3]: https://bind9.readthedocs.io/en/v9.18.13/chapter7.html#tsig
+\[2\] [Doing secure dynamic DNS updates with BIND][2]
 
-\[4\] [BIND Configuration File Guide -- logging Statement](4)
-[4]: https://web.mit.edu/darwin/src/modules/bind/bind/doc/html/logging.html
+\[3\] [Security Configurations - TSIG][3]
 
-\[5\] [tsig-keygen(8)](5)
-[5]: https://manpages.debian.org/testing/bind9/tsig-keygen.8.en.html
+\[4\] [BIND Configuration File Guide -- logging Statement][4]
 
-\[6\] [nsupdate(1)](6)
-[6]: https://www.linux.org/docs/man1/nsupdate.html
+\[5\] [tsig-keygen(8)][5]
+
+\[6\] [nsupdate(1)][6]
+
 </div>
+
+[1]: https://docstore.mik.ua/orelly/networking_2ndEd/dns/ch10_02.htm
+[2]: https://blog.hqcodeshop.fi/archives/76-Doing-secure-dynamic-DNS-updates-with-BIND.html
+[3]: https://bind9.readthedocs.io/en/v9.18.13/chapter7.html#tsig
+[4]: https://web.mit.edu/darwin/src/modules/bind/bind/doc/html/logging.html
+[5]: https://manpages.debian.org/testing/bind9/tsig-keygen.8.en.html
+[6]: https://www.linux.org/docs/man1/nsupdate.html

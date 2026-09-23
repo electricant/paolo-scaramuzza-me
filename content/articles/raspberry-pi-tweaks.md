@@ -140,21 +140,24 @@ https://raspberrypi.stackexchange.com/questions/92462/installing-watchdog-daemon
 ## References
 
 <div class="references">
+
 \[1\] [fake-hwclock for Arch Linux Arm on Raspberry Pi (using systemd)][1]
-[1]: https://archplusplus.co.uk/post/40202081414/fake-hwclock-for-arch-linux-arm-on-raspberry-pi
 
 \[2\] [Sporadic excessive CPU usage on RPi4B - Issue #136][2]
-[2]: https://github.com/nhorman/rng-tools/issues/136
 
 \[3\] [random: make /dev/random be almost like /dev/urandom][3]
-[3]: https://github.com/torvalds/linux/commit/30c08efec8884fb106b8e57094baa51bb4c44e32
 
 \[4\] [Is haveged still useful/relevant? - Issue #57][4]
-[4]: https://github.com/jirka-h/haveged/issues/57
 
 \[5\] [zram - Gentoo Wiki][5]
-[5]: https://wiki.gentoo.org/wiki/Zram
 
 \[6\] [Improving performance - ArchWiki][6]
-[6]: https://wiki.archlinux.org/title/Improving_performance#zram_or_zswap
+
 </div>
+
+[1]: https://archplusplus.co.uk/post/40202081414/fake-hwclock-for-arch-linux-arm-on-raspberry-pi
+[2]: https://github.com/nhorman/rng-tools/issues/136
+[3]: https://github.com/torvalds/linux/commit/30c08efec8884fb106b8e57094baa51bb4c44e32
+[4]: https://github.com/jirka-h/haveged/issues/57
+[5]: https://wiki.gentoo.org/wiki/Zram
+[6]: https://wiki.archlinux.org/title/Improving_performance#zram_or_zswap

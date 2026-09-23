@@ -117,7 +117,7 @@ hand so why not using it? By the way, some trial and error works too.
 <a href="/img/articles/wf2419_hacking/pin_header.jpg">
 	<img src="/img/articles/wf2419_hacking/pin_header.jpg"/>
 </a>
-<figcaption>Pin header soldered to __J1__.</figcaption>
+<figcaption>Pin header soldered to <strong>J1</strong>.</figcaption>
 </figure>
 
 After connecting a TTL to serial adapter and issuing
@@ -878,51 +878,54 @@ to try to hack another router, maybe I will be luckier this time (stay tuned).
 ## References
 
 <div class="references">
+
 \[1\] [Netis WF2419I][1]
-[1]: http://www.netis-systems.com/Suppory/de_details/id/1/de/181.html
 
 \[2\] [Hacking Reolink Cameras For Fun and Profit][2]
-[2]: https://www.thirtythreeforty.net/posts/2020/05/hacking-reolink-cameras-for-fun-and-profit/
 
 \[3\] [FCC Equipment Authorization Procedures][3]
-[3]: https://www.fcc.gov/general/equipment-authorization-procedures 
 
 \[4\] [RTL8196C Datasheet][4]
-[4]: https://lost-contact.mit.edu/afs/sur5r.net/service/drivers+doc/Realtek/RTL8196C%20Datasheet.pdf
 
 \[5\] [W25Q32FV Datasheet][5]
-[5]: https://www.winbond.com/resource-files/w25q32fv%20revi%2010202015.pdf
 
 \[6\] [Bus Pirate - Dangerous Prototypes][6]
-[6]: http://dangerousprototypes.com/docs/Bus_Pirate
 
 \[7\] [Bus Pirate - flashrom][7]
-[7]: https://www.flashrom.org/Bus_Pirate
 
 \[8\] [ISP - flashrom][8]
-[8]: https://www.flashrom.org/ISP
 
 \[9\] [GitHub - devttys0/sasquatch][9]
-[9]: https://github.com/devttys0/sasquatch
 
 \[10\] [SquashFS - Wikipedia][10]
-[10]: https://en.wikipedia.org/wiki/SquashFS
 
 \[11\] [Device file][11]
-[11]: https://en.wikipedia.org/wiki/Device_file
 
 \[12\] [Official Squashfs LZMA][12]
-[12]: https://squashfs-lzma.org/
 
 \[13\] [Netis GPL Code][13]
-[13]: http://www.netis-systems.com/Suppory/gpl.html
 
 \[14\] [mkimg.sh on GitHub][14]
-[14]: https://github.com/electricant/netis-wf2419-router-hacking/blob/master/firmware.extracted_new/mkimg.sh
 
 \[15\] [Buildroot - Wikipedia][15]
-[15]: https://en.wikipedia.org/wiki/Buildroot
 
 \[16\] [Lexra - LinuxMIPS][16]
-[16]: https://www.linux-mips.org/wiki/Lexra
+
 </div>
+
+[1]: http://www.netis-systems.com/Suppory/de_details/id/1/de/181.html
+[2]: https://www.thirtythreeforty.net/posts/2020/05/hacking-reolink-cameras-for-fun-and-profit/
+[3]: https://www.fcc.gov/general/equipment-authorization-procedures
+[4]: https://lost-contact.mit.edu/afs/sur5r.net/service/drivers+doc/Realtek/RTL8196C%20Datasheet.pdf
+[5]: https://www.winbond.com/resource-files/w25q32fv%20revi%2010202015.pdf
+[6]: http://dangerousprototypes.com/docs/Bus_Pirate
+[7]: https://www.flashrom.org/Bus_Pirate
+[8]: https://www.flashrom.org/ISP
+[9]: https://github.com/devttys0/sasquatch
+[10]: https://en.wikipedia.org/wiki/SquashFS
+[11]: https://en.wikipedia.org/wiki/Device_file
+[12]: https://squashfs-lzma.org/
+[13]: http://www.netis-systems.com/Suppory/gpl.html
+[14]: https://github.com/electricant/netis-wf2419-router-hacking/blob/master/firmware.extracted_new/mkimg.sh
+[15]: https://en.wikipedia.org/wiki/Buildroot
+[16]: https://www.linux-mips.org/wiki/Lexra

@@ -124,6 +124,7 @@ on this matter by the f3 author himself.
 
 Enough talking here is a table with the results:
 
+<div class="table-scroll">
 <table>
 	<thead>
 		<tr>
@@ -179,6 +180,7 @@ Enough talking here is a table with the results:
 		</tr>
 	</tbody>
 </table>
+</div>
 
 To compare the SD cards against each other, I calculated two figures of merit:
  - the **speed score** is the product of the read and write speeds in MB/s
@@ -187,6 +189,7 @@ To compare the SD cards against each other, I calculated two figures of merit:
 The results are summarized in the following table (ordered by overall score). 
 I have removed the OUIO SD card since it did not pass the test.
 
+<div class="table-scroll">
 <table>
 	<thead>
 		<tr>
@@ -218,6 +221,7 @@ I have removed the OUIO SD card since it did not pass the test.
 		</tr>
 	</tbody>
 </table>
+</div>
 
 All in all, the best card seems to be the miomg one. It is the fastest of the
 lot and holds 16 GB of data. For the second prize I'd pick the Banoi\_roox SD
@@ -261,27 +265,30 @@ P.P.S. I received full refund for the broken OUIO card. Always ask for a refund!
 ## References
 
 <div class="references">
-\[1\] [gateway_collection/atlas - electricant][1]
-[1]: https://github.com/electricant/gateway_collection/tree/master/atlas
 
-\[2\] [Speed Class | SD Association][2] 
-[2]: https://www.sdcard.org/developers/sd-standard-overview/speed-class/
+\[1\] [gateway_collection/atlas - electricant][1]
+
+\[2\] [Speed Class | SD Association][2]
 
 \[3\] [microSD Card Benchmarks | Raspberry Pi Dramble][3]
-[3]: https://www.pidramble.com/wiki/benchmarks/microsd-cards
 
 \[4\] [Raspberry Pi microSD card performance comparison - 2019 | Jeff Geerling][4]
-[4]: https://www.jeffgeerling.com/blog/2019/raspberry-pi-microsd-card-performance-comparison-2019
 
 \[5\] [Chinese micro SD card. : ExpectationVsReality][5]
-[5]: https://www.reddit.com/r/ExpectationVsReality/comments/41vl2i/chinese_micro_sd_card/
 
 \[6\] [f3 - Fight Flash Fraud][6]
-[6]: https://fight-flash-fraud.readthedocs.io/en/stable/introduction.html
 
 \[7\] [Usage - f3][7]
-[7]: https://fight-flash-fraud.readthedocs.io/en/stable/usage.html
 
 \[8\] [Fake card not detected by f3probe][8]
-[8]: https://github.com/AltraMayor/f3/issues/180
+
 </div>
+
+[1]: https://github.com/electricant/gateway_collection/tree/master/atlas
+[2]: https://www.sdcard.org/developers/sd-standard-overview/speed-class/
+[3]: https://www.pidramble.com/wiki/benchmarks/microsd-cards
+[4]: https://www.jeffgeerling.com/blog/2019/raspberry-pi-microsd-card-performance-comparison-2019
+[5]: https://www.reddit.com/r/ExpectationVsReality/comments/41vl2i/chinese_micro_sd_card/
+[6]: https://fight-flash-fraud.readthedocs.io/en/stable/introduction.html
+[7]: https://fight-flash-fraud.readthedocs.io/en/stable/usage.html
+[8]: https://github.com/AltraMayor/f3/issues/180

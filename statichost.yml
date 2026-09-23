@@ -7,20 +7,5 @@
 # release, so the tag pins the Zola minor version. Moving to 3.25 will bring a
 # newer Zola and possibly a config change, so re-run the build before switching.
 image: alpine:3.24
-command: apk add --no-cache zola && zola build $ZOLA_BUILD_FLAGS
+command: apk add --no-cache zola && zola build
 public: public
-
-# ZOLA_BUILD_FLAGS is unset in normal/production operation, which makes this
-# an exact no-op -> `zola build`, using base_url from config.toml as-is.
-#
-# get_url() bakes base_url (https://paolo.scaramuzza.me) into every asset URL.
-# Before DNS points there, previewing on the *.statichost.page staging domain
-# pulls CSS/fonts/images from a host that doesn't serve them, which is why the
-# page looks completely unstyled there. To preview on staging, set an
-# environment variable on this site in the statichost dashboard:
-#
-#   ZOLA_BUILD_FLAGS=--base-url /
-#
-# then trigger a rebuild. Remove that env var again before cutting over DNS -
-# a production build must use the real base_url (canonical links, og:image,
-# and the atom feed all need absolute URLs to be correct).

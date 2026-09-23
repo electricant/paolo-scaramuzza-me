@@ -40,11 +40,11 @@ body  = "I can also contribute to your perfect small-office network infrastructu
 
 ## Background
 
-Paolo is a registered member of the Ordine degli Ingegneri della provincia di
-Gorizia. His work sits at the intersection of hardware and software: schematic
+I am a registered member of the Ordine degli Ingegneri della provincia di
+Gorizia. My work sits at the intersection of hardware and software: schematic
 and PCB design, RF and EMC compliance, embedded firmware, and the
 infrastructure that ties it all together.
 
-Outside client work he writes up the technical problems he runs into — DNS,
+Outside client work I write up the technical problems I run into — DNS,
 PostgreSQL, storage, routers, microcontrollers — in the
 [articles section](/articles/) of this site.

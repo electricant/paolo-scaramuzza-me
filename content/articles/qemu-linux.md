@@ -116,15 +116,15 @@ halts the script until all the jobs terminate.
 ## References
 
 <div class="references">
+
 1. [QEMU - ArchWiki -][1]
-[1]: https://wiki.archlinux.org/index.php/QEMU "QEMU - ArchWiki -"
-
 2. [LAN switching - Wikipedia -][2]
-[2]: https://en.wikipedia.org/wiki/LAN_switching "LAN switching - Wikipedia -"
-
 3. [Documentation/Networking - qemu project -][3]
-[3]: http://wiki.qemu-project.org/Documentation/Networking "Documentation/Networking - qemu project -"
-
 4. [Networking - KVM -][4]
-[4]: https://www.linux-kvm.org/page/Networking "Networking - KVM -"
+
 </div>
+
+[1]: https://wiki.archlinux.org/index.php/QEMU "QEMU - ArchWiki -"
+[2]: https://en.wikipedia.org/wiki/LAN_switching "LAN switching - Wikipedia -"
+[3]: http://wiki.qemu-project.org/Documentation/Networking "Documentation/Networking - qemu project -"
+[4]: https://www.linux-kvm.org/page/Networking "Networking - KVM -"

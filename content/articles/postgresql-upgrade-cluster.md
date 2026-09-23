@@ -38,7 +38,7 @@ running.
 The first step is changing the configuration file of the new server to point to
 the database directory of the RAID array. To do so, the server must be stopped
 and the database reinitialized after changing the <tt>data_directory</tt> option
-of <tt>/etc/postgresql/[version]/[cluster]/postgresql.conf</tt>. To make any
+of <code>/etc/postgresql/[version]/[cluster]/postgresql.conf</code>. To make any
 future migration or update process easier, it's best to have a different folder
 for each postgres version and cluster. Once the configuration file has been
 changed, it's time to initialize the new database (as the user postgres):
@@ -105,7 +105,7 @@ your session in case ssh hangs for whatever reason.
 
 As a final step, swap the old PostgreSQL server with the new one by setting the
 option <tt>port=5232</tt> in
-<tt>/etc/postgresql/[new version]/[cluster]/postgresql.conf</tt>, disable the
+<code>/etc/postgresql/[new version]/[cluster]/postgresql.conf</code>, disable the
 old server and start the new one.
 
 	# systemctl disable postgresql@[old version]-[cluster]
@@ -135,24 +135,27 @@ sorry.
 ## Further Reading
 
 <div class="references">
+
 \[1\] [Start PostgreSQL on Debian 8][1]
-[1]: /articles/postgresql-start-debian/
 
 \[2\] [A Note About Btrfs RAID1 for my Future Self][2]
-[2]: /articles/note-btrfs-raid1/
 
 \[3\] [Upgrading a PostgreSQL Cluster][3]
-[3]: https://www.postgresql.org/docs/current/upgrading.html
 
 \[4\] [Production Releases - Debian Wiki][4]
-[4]: https://wiki.debian.org/DebianReleases#Production_Releases
 
 \[5\] [PostgreSQL Migration - Debian Wiki][5]
-[5]: https://wiki.debian.org/PostgreSql#Migration
 
 \[6\] [Using pg upgrade on Ubuntu/Debian - PostgreSQL Wiki][6]
-[6]: https://wiki.postgresql.org/wiki/Using_pg_upgrade_on_Ubuntu/Debian
 
 \[7\] [DebianGis/UpdatingPostGIS - Debian Wiki][7]
-[7]: https://wiki.debian.org/DebianGis/UpdatingPostGIS
+
 </div>
+
+[1]: /articles/postgresql-start-debian/
+[2]: /articles/note-btrfs-raid1/
+[3]: https://www.postgresql.org/docs/current/upgrading.html
+[4]: https://wiki.debian.org/DebianReleases#Production_Releases
+[5]: https://wiki.debian.org/PostgreSql#Migration
+[6]: https://wiki.postgresql.org/wiki/Using_pg_upgrade_on_Ubuntu/Debian
+[7]: https://wiki.debian.org/DebianGis/UpdatingPostGIS

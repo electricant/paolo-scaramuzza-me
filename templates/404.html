@@ -11,7 +11,7 @@
 			{% set articles = get_section(path="articles/_index.md") %}
 			<ul>
 				{% for p in articles.pages %}
-				<li><a href="{{ p.permalink | safe }}">{{ p.title }}</a></li>
+				<li><a href="{{ p.path | safe }}">{{ p.title }}</a></li>
 				{% endfor %}
 			</ul>
 		</div>

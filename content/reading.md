@@ -11,9 +11,9 @@ after each link in order to provide some context about it.
 
 **Contents**
 
-1. [Articles](#articles)
-2. [Guides, Lectures and Books](#guides-lectures-and-books)
-    1. [Programming](#programming)
+1. [Articles](/reading/#articles)
+2. [Guides, Lectures and Books](/reading/#guides-lectures-and-books)
+    1. [Programming](/reading/#programming)
 
 </div>
 
@@ -38,7 +38,7 @@ after each link in order to provide some context about it.
 
 * [A Vim Guide for Advanced Users](https://thevaluable.dev/vim-advanced/)
 
-* [How To Ask Questions The Smart Way](www.catb.org/~esr/faqs/smart-questions.html)
+* [How To Ask Questions The Smart Way](http://www.catb.org/~esr/faqs/smart-questions.html)
 
 * [linux-insides](https://0xax.gitbooks.io/linux-insides/content/)
     <br/>A book-in-progress about the linux kernel and its insides.

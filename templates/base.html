@@ -11,32 +11,32 @@
 	<meta property="og:title" content="{{ config.title }}">
 	<meta property="og:type" content="website">
 	<meta property="og:description" content="{{ config.description }}">
-	<meta property="og:image" content="{{ get_url(path='icon-512.png') | safe }}">
 	{% if current_url is defined %}<meta property="og:url" content="{{ current_url | safe }}">{% endif %}
 	{% endblock meta %}
+	{% block og_image %}<meta property="og:image" content="{{ get_url(path='icon-512.png') | safe }}">{% endblock og_image %}
 
 	{% if current_url is defined %}<link rel="canonical" href="{{ current_url | safe }}">{% endif %}
 
-	<link rel="icon" href="{{ get_url(path='favicon.ico') | safe }}" sizes="32x32">
-	<link rel="icon" type="image/svg+xml" href="{{ get_url(path='icon.svg') | safe }}">
-	<link rel="apple-touch-icon" href="{{ get_url(path='apple-touch-icon.png') | safe }}">
-	<link rel="manifest" href="{{ get_url(path='manifest.webmanifest') | safe }}">
+	<link rel="icon" href="/favicon.ico" sizes="32x32">
+	<link rel="icon" type="image/svg+xml" href="/icon.svg">
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+	<link rel="manifest" href="/manifest.json">
 
-	<link rel="preload" href="{{ get_url(path='fonts/InterVariable.woff2') | safe }}" as="font" type="font/woff2" crossorigin>
-	<link rel="stylesheet" href="{{ get_url(path='css/style.css') | safe }}">
+	<link rel="preload" href="/fonts/Inter-latin.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="stylesheet" href="/css/style.css">
 	<link rel="alternate" type="application/atom+xml" href="{{ get_url(path='atom.xml') | safe }}" title="{{ config.title }}">
 </head>
 <body>
 	<header class="site-header">
 		<div class="wrap">
-			<a class="wordmark" href="{{ get_url(path='/') | safe }}">
+			<a class="wordmark" href="/">
 				{% include "partials/icon.html" %}
 				<span>{{ config.title }}</span>
 			</a>
 			<nav class="site-nav" aria-label="Primary">
 				<ul>
-					<li><a href="{{ get_url(path='articles/') | safe }}">Articles</a></li>
-					<li><a href="{{ get_url(path='now/') | safe }}">Now</a></li>
+					<li><a href="/articles/">Articles</a></li>
+					<li><a href="/now/">Now</a></li>
 				</ul>
 			</nav>
 		</div>

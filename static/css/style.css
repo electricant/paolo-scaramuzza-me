@@ -2,7 +2,7 @@
 
 @font-face {
 	font-family: "Inter Variable";
-	src: url("/fonts/InterVariable.woff2") format("woff2");
+	src: url("/fonts/Inter-latin.woff2") format("woff2");
 	font-weight: 100 900;
 	font-style: normal;
 	font-display: swap;
@@ -10,7 +10,7 @@
 
 @font-face {
 	font-family: "Inter Variable";
-	src: url("/fonts/InterVariable-Italic.woff2") format("woff2");
+	src: url("/fonts/Inter-Italic-latin.woff2") format("woff2");
 	font-weight: 100 900;
 	font-style: italic;
 	font-display: swap;
@@ -58,6 +58,8 @@
 		--code-bg: #0d1b2a;
 		--shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.35);
 	}
+	/* the social icons are black SVGs */
+	.social-list img { filter: invert(1); }
 }
 
 /* ---- Reset -------------------------------------------------------------- */
@@ -100,7 +102,7 @@ p { margin: 0 0 1.1em; }
 /* in-page anchor targets (e.g. #services, #background on the home page):
    keep clear of the sticky header when jumped to directly */
 section[id],
-h2[id] {
+:is(h2, h3, h4, h5, h6)[id] {
 	scroll-margin-top: 5.5rem;
 }
 
@@ -115,6 +117,7 @@ h2[id] {
 .prose {
 	max-width: var(--measure);
 	margin-inline: auto;
+	overflow-wrap: break-word;  /* bare URLs and long link texts */
 }
 
 .visually-hidden {
@@ -206,10 +209,9 @@ h2[id] {
 }
 
 .hero .wrap {
+	width: 100%;   /* a flex item would otherwise shrink to its text */
 	padding-block: var(--space-4);
 	min-width: 0;
-	max-width: 50rem;
-	margin-inline: auto;
 	text-align: center;
 }
 
@@ -228,21 +230,15 @@ h2[id] {
 	grid-template-columns: 1fr;
 }
 
-/* 3x2, matching the original Bootstrap col-md-4 layout (992px breakpoint).
-   Fixed-width columns (not 1fr) keep cards the same compact size the
-   auto-fit grid used, instead of stretched to a third of the row each.
-   50rem is exactly 3 cards + 2 gaps; center both the heading and the
-   grid in that same column so they share left AND right edges. */
-#services .section-head,
-#services .service-grid {
-	max-width: 50rem;
-	margin-inline: auto;
+/* 3x2 across the header's full width from 992px, like the original
+   Bootstrap col-md-4 layout; 2 columns on tablets so a single card never
+   stretches its square image to the full width of a wide screen. */
+@media (min-width: 40rem) {
+	.service-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (min-width: 62rem) {
-	.service-grid {
-		grid-template-columns: repeat(3, 15.5rem);
-	}
+	.service-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 .service-card {
@@ -268,13 +264,11 @@ h2[id] {
 
 /* ---- Background section --------------------------------------------------- */
 
-/* Same 50rem column as the hero and services above it, so the home page
-   reads as one consistent width top to bottom instead of each section
-   picking its own measure. Article/reading/now/404 pages keep the
-   narrower --measure on the plain .prose rule - long-form reading text
-   wants a shorter line length than this landing-page copy does. */
+/* Full header width like the hero and services above it, so every home
+   page section shares the header's edges. Article/reading/now/404 pages
+   keep the narrower --measure: long-form reading text wants shorter lines. */
 .background-section .prose {
-	max-width: 50rem;
+	max-width: none;
 }
 
 .background-section .prose :is(h2, h3):first-child { margin-top: 0; }
@@ -288,9 +282,9 @@ h2[id] {
 	border-top: 1px solid var(--border);
 }
 
+/* title flexes and wraps; the date stays on one line, pinned right */
 .post-list li {
 	display: flex;
-	flex-wrap: wrap;
 	align-items: baseline;
 	justify-content: space-between;
 	gap: 0.75rem;
@@ -305,7 +299,10 @@ h2[id] {
 }
 .post-list a:hover { color: var(--accent); }
 
+.post-list li > a { flex: 1 1 auto; min-width: 0; }
+
 .post-list time {
+	flex-shrink: 0;
 	color: var(--fg-muted);
 	font-size: 0.9rem;
 	white-space: nowrap;
@@ -324,7 +321,8 @@ h2[id] {
 .article-head h1 { margin: 0; }
 
 .prose :is(h2, h3) { margin-top: 1.8em; }
-.prose ul, .prose ol { padding-left: 1.4em; }
+/* content lists only: classed component lists (.post-list) set their own */
+.prose ul:not([class]), .prose ol:not([class]) { padding-left: 1.4em; }
 .prose blockquote {
 	margin: 1.4em 0;
 	padding-left: 1em;
@@ -346,12 +344,19 @@ h2[id] {
 	text-align: left;
 }
 
-.prose code {
+/* a table wider than a phone scrolls inside its wrapper instead of widening
+   the page; the table itself stays a real, full-width table */
+.table-scroll { overflow-x: auto; margin: 1.4em 0; }
+.table-scroll > table { margin: 0; }
+
+/* tt: the articles' obsolete inline-code tag, styled the same as code */
+.prose :is(code, tt) {
 	font-family: var(--font-mono);
 	font-size: 0.9em;
 	background: var(--code-bg);
 	padding: 0.15em 0.4em;
 	border-radius: 0.3em;
+	overflow-wrap: anywhere;
 }
 
 .prose pre {
@@ -454,5 +459,14 @@ h2[id] {
 
 @media (max-width: 420px) {
 	.site-header .wrap { height: 3.5rem; }
-	.wordmark span { display: none; }
+}
+
+/* keep the name on one line beside the nav down to 320px */
+@media (max-width: 380px) {
+	:root { --gutter: 1rem; }
+	.site-header .wrap { gap: 0.75rem; }
+	.wordmark { font-size: 0.95rem; gap: 0.45rem; }
+	.wordmark svg { width: 1.6rem; height: 1.6rem; }
+	.site-nav ul { gap: 0.9rem; }
+	.site-nav a { font-size: 0.9rem; }
 }
