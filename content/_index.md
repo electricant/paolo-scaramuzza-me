@@ -2,7 +2,7 @@
 title = "Paolo Scaramuzza"
 
 [extra]
-tagline = "Electronic engineering consultant"
+tagline = "Electronic engineer"
 banner  = "img/background.jpg"
 lead    = """A craftsman, engineer by trade. Creative and eclectic just
 enough to turn ideas into reality."""
@@ -10,32 +10,27 @@ enough to turn ideas into reality."""
 [[extra.services]]
 title = "Electronic Design"
 image = "img/ee-design.jpg"
-body  = "From the choice of components to PCB design and manufacturing. Be it RF, analog, digital or mixed signal I'll take your idea to a working product."
-
-[[extra.services]]
-title = "Design Review"
-image = "img/pcb-design.jpg"
-body  = "Approaching product release? Not sure whether your board will work? Need help with the final touches? I've got you covered."
+body  = "Schematic and PCB design for RF, analog, digital and mixed-signal circuits, from the choice of components to manufacturing, and design review before release."
 
 [[extra.services]]
 title = "Embedded Programming"
 image = "img/embedded-prog.jpg"
-body  = "I am a huge fan of gadgets and electronic things. Low-level programming is my thing. Let me support you with your firmware."
+body  = "Firmware and low-level programming for microcontrollers and embedded devices."
 
 [[extra.services]]
 title = "RF Certification & Compliance"
 image = "img/emc-compliance.jpg"
-body  = "In my career I have assisted many products in swiftly passing RF and EMC testing in various countries. My experience is at your service."
+body  = "Preparing products for RF and EMC testing in various countries, and working through the results."
 
 [[extra.services]]
 title = "Technical Writing"
 image = "img/tech-writing.jpg"
-body  = "Need a product brochure, a manual, a data sheet or an application note? I will take care of writing those for you."
+body  = "Manuals, datasheets, application notes and product brochures for electronic products."
 
 [[extra.services]]
-title = "Network Infrastructure"
+title = "Linux & Infrastructure"
 image = "img/network.jpg"
-body  = "I can also contribute to your perfect small-office network infrastructure. I'm passionate about sysadmin tasks and I'm looking forward to hearing you out."
+body  = "Linux servers, DNS, databases, storage and small-office networks, which most of the articles on this site are about."
 +++
 
 ## Background
@@ -45,6 +40,5 @@ Gorizia. My work sits at the intersection of hardware and software: schematic
 and PCB design, RF and EMC compliance, embedded firmware, and the
 infrastructure that ties it all together.
 
-Outside client work I write up the technical problems I run into — DNS,
-PostgreSQL, storage, routers, microcontrollers — in the
-[articles section](/articles/) of this site.
+In the [articles section](/articles/) of this site I write up technical
+problems I have run into: DNS, PostgreSQL, storage, routers, microcontrollers.

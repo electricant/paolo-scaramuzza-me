@@ -1,7 +1,7 @@
 base_url = "https://paolo.scaramuzza.me"
 title = "Paolo Scaramuzza"
 author = "Paolo Scaramuzza"
-description = "Electronic engineering consultant: RF, EMC compliance, embedded firmware and hardware."
+description = "Electronic engineer working on circuit design, RF and EMC compliance and embedded firmware. Technical notes on electronics and Linux."
 default_language = "en"
 
 generate_feeds     = true
@@ -19,7 +19,8 @@ email = "engineering@scaramuzza.me"
 # pec = "paolo.scaramuzza@ingpec.eu"    # uncomment when Paolo publishes it
 # vat = "IT01234567890"                 # uncomment when Paolo publishes it
 albo1 = "Ordine degli Ingegneri della provincia di Gorizia"
-albo2 = "N. 942 A"
+albo2 = "n. 942, Sezione A, settore dell'informazione"
+codice_deontologico = "https://www.cni.it/images/atti_generali/Codice_deontologico_approvato_23_06_2026.pdf"
 
 [[extra.social]]
 name = "LinkedIn"

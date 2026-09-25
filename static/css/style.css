@@ -223,21 +223,25 @@ section[id],
 .section-head { margin-bottom: var(--space-3); }
 .section-head p { color: var(--fg-muted); max-width: 38rem; }
 
+/* Three cards per row across the header's full width from 992px, two on
+   tablets so a single card never stretches its square image to the full
+   width of a wide screen. Flex rather than grid so that an incomplete last
+   row is centred instead of leaving an empty cell. */
 .service-grid {
-	display: grid;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	gap: var(--space-3);
-	grid-template-columns: 1fr;
 }
 
-/* 3x2 across the header's full width from 992px, like the original
-   Bootstrap col-md-4 layout; 2 columns on tablets so a single card never
-   stretches its square image to the full width of a wide screen. */
+.service-grid > .service-card { flex: 0 1 100%; }
+
 @media (min-width: 40rem) {
-	.service-grid { grid-template-columns: repeat(2, 1fr); }
+	.service-grid > .service-card { flex-basis: calc((100% - var(--space-3)) / 2); }
 }
 
 @media (min-width: 62rem) {
-	.service-grid { grid-template-columns: repeat(3, 1fr); }
+	.service-grid > .service-card { flex-basis: calc((100% - 2 * var(--space-3)) / 3); }
 }
 
 .service-card {

@@ -6,7 +6,9 @@
 			{% if config.extra.pec %}<br>PEC: <a href="mailto:{{ config.extra.pec }}">{{ config.extra.pec }}</a>{% endif %}
 			<br>
 			{% if config.extra.vat %}P. IVA: {{ config.extra.vat }}<br>{% endif %}
-			{{ config.extra.albo1 }}, {{ config.extra.albo2 }}
+			{{ config.extra.albo1 }}<br>
+			{{ config.extra.albo2 }}
+			{% if config.extra.codice_deontologico %}<br><a href="{{ config.extra.codice_deontologico | safe }}">Codice deontologico</a>{% endif %}
 		</address>
 
 		<div class="footer-meta">
