@@ -10,7 +10,7 @@ enough to turn ideas into reality."""
 [[extra.services]]
 title = "Electronic Design"
 image = "img/ee-design.jpg"
-body  = "Schematic and PCB design for RF, analog, digital and mixed-signal circuits, from the choice of components to manufacturing, and design review before release."
+body  = "Schematic and PCB design for RF, analog, digital and mixed-signal circuits."
 
 [[extra.services]]
 title = "Embedded Programming"
@@ -20,17 +20,14 @@ body  = "Firmware and low-level programming for microcontrollers and embedded de
 [[extra.services]]
 title = "RF Certification & Compliance"
 image = "img/emc-compliance.jpg"
-body  = "Preparing products for RF and EMC testing in various countries, and working through the results."
-
-[[extra.services]]
-title = "Technical Writing"
-image = "img/tech-writing.jpg"
-body  = "Manuals, datasheets, application notes and product brochures for electronic products."
+body  = """Design for RF and EMC compliance, tracking products through \
+	certification together with the test laboratory, and troubleshooting \
+	when a test fails."""
 
 [[extra.services]]
 title = "Linux & Infrastructure"
 image = "img/network.jpg"
-body  = "Linux servers, DNS, databases, storage and small-office networks, which most of the articles on this site are about."
+body  = "Linux servers, DNS, databases, storage and small-office networks."
 +++
 
 ## Background
