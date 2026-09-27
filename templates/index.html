@@ -26,12 +26,14 @@
 			<div class="section-head">
 				<h2>What I work on</h2>
 			</div>
-			<div class="service-grid">
+			<div class="area-list">
 				{% for s in section.extra.services %}
-				<div class="service-card">
-					<img class="service-card-img" src="/{{ s.image | safe }}" alt="" width="250" height="250" loading="lazy">
-					<h3>{{ s.title }}</h3>
-					<p>{{ s.body }}</p>
+				<div class="area">
+					<img class="area-img" src="/{{ s.image | safe }}" alt="" width="200" height="200" loading="lazy">
+					<div class="area-text">
+						<h3>{{ s.title }}</h3>
+						<p>{{ s.body }}</p>
+					</div>
 				</div>
 				{% endfor %}
 			</div>

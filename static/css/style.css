@@ -223,47 +223,51 @@ section[id],
 .section-head { margin-bottom: var(--space-3); }
 .section-head p { color: var(--fg-muted); max-width: 38rem; }
 
-/* Three cards per row across the header's full width from 992px, two on
-   tablets so a single card never stretches its square image to the full
-   width of a wide screen. Flex rather than grid so that an incomplete last
-   row is centred instead of leaving an empty cell. */
-.service-grid {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+/* One row per area, photo beside the text. Photos show at 200px, the
+   native size of the smallest source image, so they are never upscaled on
+   a standard display; on phones they shrink to a thumbnail beside the text.
+   Two columns of rows on wide screens so the section uses the full width;
+   one column below that. With an odd number of areas the last one sits in
+   the left column on its own, like the end of a two-column list. */
+.area-list {
+	display: grid;
 	gap: var(--space-3);
 }
 
-.service-grid > .service-card { flex: 0 1 100%; }
+@media (min-width: 62rem) {
+	.area-list {
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: var(--space-4);
+	}
+}
+
+.area {
+	display: grid;
+	grid-template-columns: 6.5rem 1fr;
+	gap: var(--space-2);
+	align-items: start;
+}
 
 @media (min-width: 40rem) {
-	.service-grid > .service-card { flex-basis: calc((100% - var(--space-3)) / 2); }
+	.area {
+		grid-template-columns: 12.5rem 1fr;
+		gap: var(--space-3);
+		align-items: center;
+	}
 }
 
-@media (min-width: 62rem) {
-	.service-grid > .service-card { flex-basis: calc((100% - 2 * var(--space-3)) / 3); }
-}
-
-.service-card {
-	background: var(--bg-raised);
-	border: 1px solid var(--border);
-	border-radius: var(--radius);
-	padding: var(--space-3);
-	box-shadow: var(--shadow);
-}
-
-.service-card-img {
+.area-img {
 	display: block;
 	width: 100%;
 	height: auto;
 	aspect-ratio: 1 / 1;
 	object-fit: cover;
 	border-radius: calc(var(--radius) * 0.6);
-	margin-bottom: var(--space-2);
 }
 
-.service-card h3 { margin: 0 0 0.4rem; }
-.service-card p { color: var(--fg-muted); margin: 0; font-size: 0.98rem; }
+.area-text { max-width: 38rem; }
+.area-text h3 { margin: 0 0 0.4rem; }
+.area-text p { color: var(--fg-muted); margin: 0; font-size: 0.98rem; }
 
 /* ---- Background section --------------------------------------------------- */
 
