@@ -223,12 +223,13 @@ section[id],
 .section-head { margin-bottom: var(--space-3); }
 .section-head p { color: var(--fg-muted); max-width: 38rem; }
 
-/* One row per area, photo beside the text. Photos show at 200px, the
-   native size of the smallest source image, so they are never upscaled on
-   a standard display; on phones they shrink to a thumbnail beside the text.
-   Two columns of rows on wide screens so the section uses the full width;
-   one column below that. With an odd number of areas the last one sits in
-   the left column on its own, like the end of a two-column list. */
+/* One row per area, photo beside the text; on phones the photo sits
+   above the text instead. Photos show at 200px at every width, the native
+   size of the smallest source image, so they are never upscaled on a
+   standard display. Two columns of rows on wide screens so the section
+   uses the full width; one column below that. With an odd number of areas
+   the last one sits in the left column on its own, like the end of a
+   two-column list. */
 .area-list {
 	display: grid;
 	gap: var(--space-3);
@@ -243,9 +244,7 @@ section[id],
 
 .area {
 	display: grid;
-	grid-template-columns: 6.5rem 1fr;
 	gap: var(--space-2);
-	align-items: start;
 }
 
 @media (min-width: 40rem) {
@@ -258,7 +257,9 @@ section[id],
 
 .area-img {
 	display: block;
-	width: 100%;
+	width: 12.5rem;
+	max-width: 100%;
+	margin-inline: auto;
 	height: auto;
 	aspect-ratio: 1 / 1;
 	object-fit: cover;
