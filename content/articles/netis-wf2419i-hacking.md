@@ -57,7 +57,7 @@ worries.
 
 <figure>
 <a href="/img/articles/wf2419_hacking/fcc_id_label.jpg">
-	<img src="/img/articles/wf2419_hacking/fcc_id_label.jpg"/>
+	<img src="/img/articles/wf2419_hacking/fcc_id_label.jpg" alt="Router label with FCC ID T58WF2419R and the default Wi-Fi password &quot;password&quot; circled (full-size image)"/>
 </a>
 <figcaption>The FCC ID, as seen on the label.</figcaption>
 </figure>
@@ -78,7 +78,7 @@ green of the board and are highlighted in the picture below:
 
 <figure>
 <a href="/img/articles/wf2419_hacking/components_labelled.jpg">
-	<img src="/img/articles/wf2419_hacking/components_labelled.jpg"/>
+	<img src="/img/articles/wf2419_hacking/components_labelled.jpg" alt="Router board with the main components labelled (full-size image)"/>
 </a>
 <figcaption>Router board with main components labelled.</figcaption>
 </figure>
@@ -94,7 +94,7 @@ pinout, looking for a serial port of some kind.
 
 <figure>
 <a href="/img/articles/wf2419_hacking/chipset_pinout.png">
-		<img src="/img/articles/wf2419_hacking/chipset_pinout.png"/>
+		<img src="/img/articles/wf2419_hacking/chipset_pinout.png" alt="Realtek RTL8196C pinout with the serial port pins highlighted (full-size image)"/>
 </a>
 <figcaption>
 	Realtek RTL8196C chipset pinout with serial port pins highlighted.
@@ -115,7 +115,7 @@ hand so why not using it? By the way, some trial and error works too.
 
 <figure>
 <a href="/img/articles/wf2419_hacking/pin_header.jpg">
-	<img src="/img/articles/wf2419_hacking/pin_header.jpg"/>
+	<img src="/img/articles/wf2419_hacking/pin_header.jpg" alt="Pin header soldered to J1 (full-size image)"/>
 </a>
 <figcaption>Pin header soldered to <strong>J1</strong>.</figcaption>
 </figure>
@@ -317,7 +317,7 @@ all open source.
 
 <figure>
 <a href="/img/articles/wf2419_hacking/flash_pinout.gif">
-	<img src="/img/articles/wf2419_hacking/flash_pinout.gif"/>
+	<img src="/img/articles/wf2419_hacking/flash_pinout.gif" alt="Winbond W25Q32FV flash chip pinout (full-size image)"/>
 </a>
 <figcaption>Winbond W25Q32FV flash chip pinout.</figcaption>
 </figure>
@@ -341,7 +341,7 @@ created a nice little connector ready to be plugged into the Bus Pirate socket.
 
 <figure>
 <a href="/img/articles/wf2419_hacking/flash_buspirate.jpg">
-	<img src="/img/articles/wf2419_hacking/flash_buspirate.jpg"/>
+	<img src="/img/articles/wf2419_hacking/flash_buspirate.jpg" alt="Bus Pirate wired to the flash chip (full-size image)"/>
 </a>
 <figcaption>Bus Pirate ISP connection to the flash chip.</figcaption>
 </figure>
@@ -722,7 +722,7 @@ The following webpage appeared.
 
 <figure>
 	<a href="/img/articles/wf2419_hacking/pwned_success.png">
-		<img src="/img/articles/wf2419_hacking/pwned_success.png"/>
+		<img src="/img/articles/wf2419_hacking/pwned_success.png" alt="Router web page at 192.168.1.1/index.htm showing an &quot;I have been pwned!&quot; alert (full-size image)"/>
 	</a>
 	<figcaption>Success! A pwned index.htm appears.</figcaption>
 </figure>
@@ -924,7 +924,7 @@ to try to hack another router, maybe I will be luckier this time (stay tuned).
 [9]: https://github.com/devttys0/sasquatch
 [10]: https://en.wikipedia.org/wiki/SquashFS
 [11]: https://en.wikipedia.org/wiki/Device_file
-[12]: https://squashfs-lzma.org/
+[12]: https://web.archive.org/web/20151227163131/http://www.squashfs-lzma.org/
 [13]: http://www.netis-systems.com/Suppory/gpl.html
 [14]: https://github.com/electricant/netis-wf2419-router-hacking/blob/master/firmware.extracted_new/mkimg.sh
 [15]: https://en.wikipedia.org/wiki/Buildroot

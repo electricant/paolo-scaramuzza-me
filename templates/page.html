@@ -5,7 +5,7 @@
 {% block title %}{{ page.title }} — {{ config.title }}{% endblock title %}
 
 {% block meta %}
-	{% set desc = page.summary | default(value=page.content) | striptags | truncate(length=160) %}
+	{% set desc = page.summary | default(value=page.content) | striptags | truncate(length=160) | replace(from='"', to='&quot;') %}
 	<meta name="description" content="{{ desc | safe }}">
 	<meta property="og:title" content="{{ page.title }}">
 	<meta property="og:description" content="{{ desc | safe }}">

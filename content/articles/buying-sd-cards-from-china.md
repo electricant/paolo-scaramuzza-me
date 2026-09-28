@@ -35,7 +35,7 @@ nonsensical approvals and speed ratings.
 
 <figure>
 	<a href="/img/articles/sdcard_test/4-cards.jpg">
-		<img src="/img/articles/sdcard_test/4-cards.jpg"/>
+		<img src="/img/articles/sdcard_test/4-cards.jpg" alt="The four SD cards under test: Banoi_roox, Miomg, OUIO and ShanDian (full-size image)"/>
 	</a>
 	<figcaption>
 		The SD cards under test: Banoi_roox, Miomg, OUIO, ShanDian.
@@ -105,7 +105,7 @@ the device directly to make sure we are verifying the actual data written.
 
 <figure>
 	<a href="/img/articles/sdcard_test/testing.jpg">
-		<img src="/img/articles/sdcard_test/testing.jpg"/>
+		<img src="/img/articles/sdcard_test/testing.jpg" alt="Laptop running the test script in a terminal, with the SD cards on the desk (full-size image)"/>
 	</a>
 	<figcaption>
 		Using the test script.
