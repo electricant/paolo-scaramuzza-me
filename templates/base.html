@@ -42,11 +42,13 @@
 		</div>
 	</header>
 
+	<main>
 	{% block content %}{% endblock content %}
+	</main>
 
 	{% include "partials/footer.html" %}
 
 	<!-- 100% privacy-first analytics -->
-	<script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+	<script async data-ignore-metrics="utm" src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 </body>
 </html>

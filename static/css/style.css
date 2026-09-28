@@ -65,7 +65,11 @@
 /* ---- Reset -------------------------------------------------------------- */
 
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
+html {
+	-webkit-text-size-adjust: 100%;
+	/* keeps fragment jumps and keyboard focus clear of the sticky header */
+	scroll-padding-top: 5.5rem;
+}
 
 body {
 	margin: 0;
@@ -87,6 +91,9 @@ a {
 }
 a:hover { text-decoration-thickness: 2px; }
 
+/* the UA focus ring is near-invisible on the dark background */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
 h1, h2, h3 {
 	line-height: 1.2;
 	font-weight: 700;
@@ -97,14 +104,7 @@ h1 { font-size: clamp(1.9rem, 1.4rem + 2vw, 2.75rem); }
 h2 { font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem); }
 h3 { font-size: 1.15rem; }
 
-p { margin: 0 0 1.1em; }
-
-/* in-page anchor targets (e.g. #services, #background on the home page):
-   keep clear of the sticky header when jumped to directly */
-section[id],
-:is(h2, h3, h4, h5, h6)[id] {
-	scroll-margin-top: 5.5rem;
-}
+p { margin: 0 0 1.1em; text-wrap: pretty; }  /* evener rag, no one-word last lines */
 
 /* ---- Layout helpers ------------------------------------------------------ */
 
@@ -143,8 +143,9 @@ section[id],
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	gap: var(--space-2);
-	height: 4rem;
+	flex-wrap: wrap;   /* enlarged text: nav drops below the name instead of overflowing */
+	gap: 0 var(--space-2);
+	min-height: 4rem;
 }
 
 .wordmark {
@@ -188,6 +189,8 @@ section[id],
 	align-items: center;
 	min-height: 50vh;
 	color: #f6f7f5;
+	background-color: #0b1420;  /* text stays readable before/without the photo */
+	isolation: isolate;  /* keeps the z-index:-1/-2 photo and scrim above that background */
 	overflow: hidden;
 }
 
@@ -205,6 +208,16 @@ section[id],
 	position: absolute;
 	inset: 0;
 	z-index: -1;
+	/* darkens only behind the text, enough for 4.5:1 over the bright vias;
+	   the edges of the photo stay nearly untouched */
+	background: radial-gradient(ellipse 60% 55% at 50% 50%, rgba(11, 20, 32, 0.6), rgba(11, 20, 32, 0.2));
+}
+
+/* narrow phones: the lead wraps out to the edges of the photo */
+@media (max-width: 25rem) {
+	.hero::before {
+		background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(11, 20, 32, 0.6), rgba(11, 20, 32, 0.3));
+	}
 }
 
 .hero .wrap {
@@ -215,7 +228,7 @@ section[id],
 }
 
 .hero h1 { margin: 0 0 0.5rem; color: #fff; }
-.hero p { font-size: 1.15rem; color: #dfe6e9; margin: 0; }
+.hero p { font-size: 1.15rem; color: #dfe6e9; margin: 0 auto; max-width: 40rem; }
 
 /* ---- Services grid -------------------------------------------------------- */
 
@@ -433,6 +446,7 @@ section[id],
 	align-items: start;
 }
 
+.footer-grid, .area-text { overflow-wrap: anywhere; }  /* long email/words at large text sizes */
 .footer-grid address { font-style: normal; }
 .footer-grid address strong { color: var(--fg); }
 .footer-grid a { color: var(--fg-muted); }
@@ -446,6 +460,7 @@ section[id],
 	padding: 0;
 	justify-content: flex-end;
 }
+.social-list a, .sa-badge a { display: block; }  /* focus ring wraps the image */
 .social-list img { width: 1.35rem; height: 1.35rem; opacity: 0.75; }
 .social-list a:hover img { opacity: 1; }
 
@@ -466,13 +481,13 @@ section[id],
 }
 
 @media (max-width: 420px) {
-	.site-header .wrap { height: 3.5rem; }
+	.site-header .wrap { min-height: 3.5rem; }
 }
 
 /* keep the name on one line beside the nav down to 320px */
 @media (max-width: 380px) {
 	:root { --gutter: 1rem; }
-	.site-header .wrap { gap: 0.75rem; }
+	.site-header .wrap { column-gap: 0.75rem; }
 	.wordmark { font-size: 0.95rem; gap: 0.45rem; }
 	.wordmark svg { width: 1.6rem; height: 1.6rem; }
 	.site-nav ul { gap: 0.9rem; }

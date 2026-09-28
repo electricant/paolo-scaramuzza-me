@@ -4,8 +4,9 @@ title = "Paolo Scaramuzza"
 [extra]
 tagline = "Electronic engineer"
 banner  = "img/background.jpg"
-lead    = """A craftsman, engineer by trade. Creative and eclectic just
-enough to turn ideas into reality."""
+lead    = """Ten years of RF, analog and power electronics design, across research
+and industry. A Master's degree in Management Engineering lets me carry that
+work from the bench into project planning."""
 
 [[extra.services]]
 title = "Electronic Design"
@@ -29,13 +30,3 @@ title = "Linux & Infrastructure"
 image = "img/network.jpg"
 body  = "Linux servers, DNS, databases, storage and small-office networks."
 +++
-
-## Background
-
-I am a registered member of the Ordine degli Ingegneri della provincia di
-Gorizia. My work sits at the intersection of hardware and software: schematic
-and PCB design, RF and EMC compliance, embedded firmware, and the
-infrastructure that ties it all together.
-
-In the [articles section](/articles/) of this site I write up technical
-problems I have run into: DNS, PostgreSQL, storage, routers, microcontrollers.

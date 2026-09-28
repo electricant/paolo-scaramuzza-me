@@ -3,7 +3,7 @@
 {% block title %}{{ section.title }} — {{ config.title }}{% endblock title %}
 
 {% block meta %}
-	{% set desc = section.content | striptags | truncate(length=160) %}
+	{% set desc = section.content | striptags | truncate(length=160) | replace(from='"', to='&quot;') %}
 	<meta name="description" content="{{ desc | safe }}">
 	<meta property="og:title" content="{{ section.title }} — {{ config.title }}">
 	<meta property="og:description" content="{{ desc | safe }}">
