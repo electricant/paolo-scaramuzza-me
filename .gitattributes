@@ -1,0 +1,14 @@
+# Handle line endings automatically for files detected as text 
+# and leave binary files untouched.
+* text=auto
+
+# Explicitly declare text files you want to always be LF on checkout
+*.sh text eol=lf
+*.js text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+
+# Denote binary files so git doesn't try to fix line endings
+*.png binary
+*.jpg binary
+*.gif binary
