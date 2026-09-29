@@ -227,6 +227,9 @@ p { margin: 0 0 1.1em; text-wrap: pretty; }
 
 .hero h1 { margin: 0 0 0.5rem; color: #fff; }
 .hero p { font-size: 1.15rem; color: #dfe6e9; margin: 0 auto; max-width: 40rem; }
+/* a soft halo in the page's dark colour right behind the letters, so the
+   busy detail of the photo does not compete with them */
+.hero h1, .hero p { text-shadow: 0 1px 10px rgba(11, 20, 32, 0.9); }
 
 
 .section { padding-block: var(--space-5); }
