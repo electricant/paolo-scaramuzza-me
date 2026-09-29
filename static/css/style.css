@@ -147,6 +147,11 @@ p { margin: 0 0 1.1em; text-wrap: pretty; }
 
 .wordmark svg { width: 1.9rem; height: 1.9rem; flex-shrink: 0; }
 
+/* The mark takes the site's accent pair, so it follows light and dark mode. */
+.wordmark .mark-bg, .wordmark .mark-hole { fill: var(--accent); }
+.wordmark .mark-line { stroke: var(--accent-fg); }
+.wordmark .mark-pad { fill: var(--accent-fg); }
+
 .site-nav ul {
 	display: flex;
 	gap: var(--space-3);
