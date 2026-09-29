@@ -189,6 +189,8 @@ p { margin: 0 0 1.1em; text-wrap: pretty; }
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+	/* the SMA connectors sit just below the text, along the bottom edge */
+	object-position: 50% 41%;
 	z-index: -2;
 }
 
@@ -197,14 +199,22 @@ p { margin: 0 0 1.1em; text-wrap: pretty; }
 	position: absolute;
 	inset: 0;
 	z-index: -1;
-	/* darkens only behind the text, enough for 4.5:1 over the bright vias;
-	   the edges of the photo stay nearly untouched */
-	background: radial-gradient(ellipse 60% 55% at 50% 50%, rgba(11, 20, 32, 0.6), rgba(11, 20, 32, 0.2));
+	/* darkens mostly behind the text, enough for 4.5:1 over the brightest
+	   parts of the photo there; the edges stay lighter */
+	background: radial-gradient(ellipse 70% 62% at 50% 50%, rgba(11, 20, 32, 0.8), rgba(11, 20, 32, 0.25));
 }
 
-@media (max-width: 25rem) {
+@media (max-width: 30rem) {
+	.hero img {
+		top: -14%;
+		height: 163%;
+		object-position: 35% 50%;
+	}
+}
+
+@media (max-width: 30rem) {
 	.hero::before {
-		background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(11, 20, 32, 0.6), rgba(11, 20, 32, 0.3));
+		background: radial-gradient(ellipse 80% 65% at 50% 50%, rgba(11, 20, 32, 0.82), rgba(11, 20, 32, 0.5));
 	}
 }
 

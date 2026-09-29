@@ -3,7 +3,7 @@ title = "Paolo Scaramuzza"
 
 [extra]
 tagline = "Electronic engineer"
-banner  = "img/background.jpg"
+banner  = "img/hero-board.jpg"
 lead    = """Ten years of RF, analog and power electronics design, across research
 and industry. A Master's degree in Management Engineering lets me carry that
 work from the bench into project planning."""
