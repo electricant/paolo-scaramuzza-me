@@ -1,3 +1,4 @@
+{% import "partials/social-icon.html" as social %}
 <footer class="site-footer">
 	<div class="wrap footer-grid">
 		<address>
@@ -16,7 +17,7 @@
 				{% for s in config.extra.social %}
 				<li>
 					<a href="{{ s.url | safe }}" title="{{ s.name }}" rel="me">
-						<img src="/{{ s.icon | safe }}" alt="{{ s.name }}" width="20" height="20" loading="lazy">
+						{{ social::social_icon(s=s) }}
 					</a>
 				</li>
 				{% endfor %}
