@@ -16,7 +16,7 @@
 			<ul class="social-list">
 				{% for s in config.extra.social %}
 				<li>
-					<a href="{{ s.url | safe }}" title="{{ s.name }}" rel="me">
+					<a href="{{ s.url | safe }}" title="{{ s.name }}" aria-label="{{ s.name }}" rel="me">
 						{{ social::social_icon(s=s) }}
 					</a>
 				</li>
