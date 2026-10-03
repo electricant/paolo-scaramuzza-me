@@ -7,7 +7,7 @@ date  = 2022-02-01
 
 I own a Debian PC that is used as Network Attached Storage (NAS) and runs
 PostgreSQL&#8239;[\[1\]][1] with data files stored on a Btrfs RAID1
-filesystem&#8239;[\[2\]][2]. As expected, with every new Debian release comes a
+filesystem&#8239;[\[2\]][2]. With every new Debian release comes a
 new major version of the PostgreSQL database which is not compatible with the
 internal data storage format of the previous one. This requires upgrading the on
 disk data files before using the new database server&#8239;[\[3\]][3].

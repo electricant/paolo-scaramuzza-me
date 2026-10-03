@@ -1,5 +1,5 @@
 +++
-title = "Notes on Using AVRDUDE"
+title = "Modern AVR Programming with AVRDUDE: UPDI and Toolchain Integration"
 date  = 2025-09-01
 +++
 
